@@ -4,7 +4,7 @@
 
 module Bigcommerce
   class GiftCertificates < Resource
-    include Bigcommerce::ResourceActions.new uri: 'gift_certificates/%d'
+    include Bigcommerce::ResourceActions.new uri: 'v2/gift_certificates/%d'
 
     property :id
     property :customer_id

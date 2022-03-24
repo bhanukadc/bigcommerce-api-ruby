@@ -4,7 +4,7 @@
 
 module Bigcommerce
   class Sku < Resource
-    include Bigcommerce::SubresourceActions.new uri: 'products/%d/skus/%d'
+    include Bigcommerce::SubresourceActions.new(uri: 'v2/products/%d/skus/%d', v3uri: 'v3/catalog/products/%d/variants/%d')
 
     property :id
     property :sku
@@ -25,11 +25,11 @@ module Bigcommerce
     property :count
 
     def self.count_all(params = {})
-      get 'products/skus/count', params
+      get 'v2/products/skus/count', params
     end
 
     def self.count(product_id, params = {})
-      get "products/#{product_id}/skus/count", params
+      get "v2/products/#{product_id}/skus/count", params
     end
   end
 end

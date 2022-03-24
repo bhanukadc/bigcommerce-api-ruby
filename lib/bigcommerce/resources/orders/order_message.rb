@@ -5,7 +5,7 @@
 module Bigcommerce
   class OrderMessage < Resource
     include Bigcommerce::SubresourceActions.new(
-      uri: 'orders/%d/messages/%d',
+      uri: 'v2/orders/%d/messages/%d',
       disable: %i[create update destroy destroy_all]
     )
 

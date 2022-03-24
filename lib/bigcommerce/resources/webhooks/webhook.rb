@@ -6,7 +6,7 @@
 module Bigcommerce
   class Webhook < Resource
     include Bigcommerce::ResourceActions.new(
-      uri: 'hooks/%d',
+      uri: 'v2/hooks/%d',
       disable: [:destroy_all]
     )
 

@@ -4,7 +4,7 @@
 
 module Bigcommerce
   class BlogTag < Resource
-    include Bigcommerce::Request.new 'blog/tags'
+    include Bigcommerce::Request.new 'v2/blog/tags'
 
     property :tag
     property :post_ids

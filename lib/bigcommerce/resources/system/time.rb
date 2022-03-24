@@ -4,7 +4,7 @@
 
 module Bigcommerce
   class System < Resource
-    include Bigcommerce::Request.new 'time'
+    include Bigcommerce::Request.new 'v2/time'
 
     property :time
 

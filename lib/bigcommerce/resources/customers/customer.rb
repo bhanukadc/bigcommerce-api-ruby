@@ -7,7 +7,7 @@ require 'securerandom'
 
 module Bigcommerce
   class Customer < Resource
-    include Bigcommerce::ResourceActions.new uri: 'customers/%d'
+    include Bigcommerce::ResourceActions.new uri: 'v2/customers/%d'
 
     property :id
     property :_authentication
@@ -28,7 +28,7 @@ module Bigcommerce
     property :accepts_marketing
 
     def self.count(params = {})
-      get 'customers/count', params
+      get 'v2/customers/count', params
     end
 
     # Generate a token that can be used to log the customer into the storefront.

@@ -5,7 +5,7 @@
 
 module Bigcommerce
   class Coupon < Resource
-    include Bigcommerce::ResourceActions.new uri: 'coupons/%d'
+    include Bigcommerce::ResourceActions.new uri: 'v2/coupons/%d'
 
     property :id
     property :name
@@ -24,7 +24,7 @@ module Bigcommerce
     property :shipping_methods
 
     def self.count(params = {})
-      get 'coupons/count', params
+      get 'v2/coupons/count', params
     end
   end
 end

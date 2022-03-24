@@ -5,7 +5,7 @@
 module Bigcommerce
   class Country < Resource
     include Bigcommerce::ResourceActions.new(
-      uri: 'countries/%d',
+      uri: 'v2/countries/%d',
       disable: %i[create update destroy destroy_all]
     )
 
@@ -17,7 +17,7 @@ module Bigcommerce
     property :states
 
     def self.count(params = {})
-      get 'countries/count', params
+      get 'v2/countries/count', params
     end
   end
 end

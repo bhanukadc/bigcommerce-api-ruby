@@ -4,7 +4,7 @@
 
 module Bigcommerce
   class BlogPost < Resource
-    include Bigcommerce::ResourceActions.new uri: 'blog/posts/%d'
+    include Bigcommerce::ResourceActions.new uri: 'v2/blog/posts/%d'
 
     property :id
     property :url
@@ -23,7 +23,7 @@ module Bigcommerce
     property :count
 
     def self.count(params = {})
-      get 'blog/posts/count', params
+      get 'v2/blog/posts/count', params
     end
   end
 end

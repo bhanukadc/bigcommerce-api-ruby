@@ -4,7 +4,7 @@
 
 module Bigcommerce
   class PaymentMethod < Resource
-    include Bigcommerce::Request.new 'payments/methods'
+    include Bigcommerce::Request.new 'v2/payments/methods'
 
     property :code
     property :name

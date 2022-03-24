@@ -4,7 +4,7 @@
 
 module Bigcommerce
   class ProductReview < Resource
-    include Bigcommerce::SubresourceActions.new uri: 'products/%d/reviews/%d'
+    include Bigcommerce::SubresourceActions.new uri: 'v2/products/%d/reviews/%d'
 
     property :id
     property :product_id

@@ -1,7 +1,7 @@
 RSpec.describe Bigcommerce::Customer do
   describe '.count' do
     it 'should hit the correct path' do
-      expect(described_class).to receive(:get).with('customers/count', {})
+      expect(described_class).to receive(:get).with('v2/customers/count', {})
       described_class.count
     end
   end
