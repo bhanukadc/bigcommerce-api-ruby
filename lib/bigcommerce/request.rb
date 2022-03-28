@@ -78,7 +78,7 @@ module Bigcommerce
 
       def build_response_object(response)
         json = parse response.body
-        if Bigcommerce.config.dig('version') == 3
+        if json.is_a?(Hash) && json[:data].present?
           json = json[:data] if json[:data].is_a? Array
         end
         if json.is_a? Array
