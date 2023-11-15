@@ -4,7 +4,7 @@ module Bigcommerce
   class PathBuilder
     attr_reader :uri, :v3uri
 
-    def initialize(uri, v3uri)
+    def initialize(uri, v3uri = nil)
       @uri = uri
       @v3uri = v3uri
     end
@@ -78,7 +78,7 @@ module Bigcommerce
 
       def build_response_object(response)
         json = parse response.body
-        if json.is_a?(Hash) && json[:data].present?
+        if json.is_a?(Hash) && !json[:data].nil?
           json = json[:data] if json[:data].is_a? Array
         end
         if json.is_a? Array
