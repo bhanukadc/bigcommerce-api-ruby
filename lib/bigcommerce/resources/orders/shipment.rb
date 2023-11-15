@@ -4,7 +4,7 @@
 
 module Bigcommerce
   class Shipment < Resource
-    include Bigcommerce::SubresourceActions.new uri: 'orders/%d/shipments/%d'
+    include Bigcommerce::SubresourceActions.new uri: 'v2/orders/%d/shipments/%d'
 
     property :id
     property :items
@@ -21,11 +21,11 @@ module Bigcommerce
     property :count
 
     def self.count(order_id, params = {})
-      get "orders/#{order_id}/shipments/count", params
+      get "v2/orders/#{order_id}/shipments/count", params
     end
 
     def self.count_all(params = {})
-      get 'orders/shipments/count', params
+      get 'v2/orders/shipments/count', params
     end
   end
 end

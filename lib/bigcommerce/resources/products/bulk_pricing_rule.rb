@@ -17,11 +17,11 @@ module Bigcommerce
     property :type_value
 
     def self.count(product_id, params = {})
-      get "products/#{product_id}/discount_rules/count", params
+      get "v2/products/#{product_id}/discount_rules/count", params
     end
 
     def self.count_all(params = {})
-      get 'products/discount_rules/count', params
+      get 'v2/products/discount_rules/count', params
     end
   end
 end

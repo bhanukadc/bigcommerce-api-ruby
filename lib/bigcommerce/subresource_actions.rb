@@ -1,7 +1,7 @@
 module Bigcommerce
   class SubresourceActions < ResourceActions
     def included(base)
-      base.send(:include, Request.new(options[:uri]))
+      base.send(:include, Request.new(options[:uri], options[:v3uri]))
       base.extend(ClassMethods)
       options[:disable_methods] ||= []
       methods = ClassMethods.public_instance_methods & options[:disable_methods]

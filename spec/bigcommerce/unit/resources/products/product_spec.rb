@@ -4,7 +4,7 @@ RSpec.describe Bigcommerce::Product do
   describe '.count' do
     it 'should hit the correct path with params' do
       params = { page: 1 }
-      expect(@product).to receive(:get).with('products/count', params)
+      expect(@product).to receive(:get).with('v2/products/count', params)
       @product.count params
     end
   end

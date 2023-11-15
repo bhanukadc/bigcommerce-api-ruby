@@ -6,7 +6,7 @@
 
 module Bigcommerce
   class Redirect < Resource
-    include Bigcommerce::ResourceActions.new uri: 'redirects/%d'
+    include Bigcommerce::ResourceActions.new uri: 'v2/redirects/%d'
 
     property :id
     property :count
@@ -15,7 +15,7 @@ module Bigcommerce
     property :url
 
     def self.count(params = {})
-      get 'redirects/count', params
+      get 'v2/redirects/count', params
     end
   end
 end

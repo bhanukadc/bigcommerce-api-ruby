@@ -4,7 +4,7 @@
 
 module Bigcommerce
   class StoreInfo < Resource
-    include Bigcommerce::Request.new 'store'
+    include Bigcommerce::Request.new 'v2/store'
 
     property :id
     property :logo

@@ -4,7 +4,7 @@
 
 module Bigcommerce
   class Option < Resource
-    include Bigcommerce::ResourceActions.new uri: 'options/%d'
+    include Bigcommerce::ResourceActions.new uri: 'v2/options/%d'
 
     property :id
     property :name
@@ -14,7 +14,7 @@ module Bigcommerce
     property :values
 
     def self.count(params = {})
-      get 'options/count', params
+      get 'v2/options/count', params
     end
   end
 end

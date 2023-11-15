@@ -6,7 +6,7 @@
 module Bigcommerce
   class TaxClass < Resource
     include Bigcommerce::ResourceActions.new(
-      uri: 'tax_classes/%d',
+      uri: 'v2/tax_classes/%d',
       disable: %i[create update destroy destroy_all]
     )
 

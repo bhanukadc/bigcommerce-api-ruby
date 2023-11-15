@@ -5,7 +5,7 @@
 module Bigcommerce
   class OrderTax < Resource
     include Bigcommerce::SubresourceActions.new(
-      uri: 'orders/%d/taxes/%d',
+      uri: 'v2/orders/%d/taxes/%d',
       disable: %i[create update destroy destroy_all]
     )
 

@@ -4,7 +4,7 @@
 
 module Bigcommerce
   class Product < Resource
-    include Bigcommerce::ResourceActions.new uri: 'products/%d'
+    include Bigcommerce::ResourceActions.new(uri: 'v2/products/%d', v3uri: "v3/catalog/products/%d")
 
     property :id
     property :sku
@@ -91,7 +91,7 @@ module Bigcommerce
     property :count
 
     def self.count(params = {})
-      get 'products/count', params
+      get 'v2/products/count', params
     end
   end
 end

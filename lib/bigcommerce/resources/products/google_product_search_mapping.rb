@@ -4,7 +4,7 @@
 
 module Bigcommerce
   class GoogleProductSearchMapping < Resource
-    include Bigcommerce::Request.new 'products/%d/googleproductsearch'
+    include Bigcommerce::Request.new 'v2/products/%d/googleproductsearch'
 
     property :size
     property :color

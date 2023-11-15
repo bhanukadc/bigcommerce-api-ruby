@@ -5,7 +5,7 @@
 module Bigcommerce
   class OrderShippingAddress < Resource
     include Bigcommerce::SubresourceActions.new(
-      uri: 'orders/%d/shipping_addresses/%d',
+      uri: 'v2/orders/%d/shipping_addresses/%d',
       disable: %i[create update destroy destroy_all]
     )
 
@@ -41,11 +41,11 @@ module Bigcommerce
     property :count
 
     def self.count(order_id, params = {})
-      get "orders/#{order_id}/shipping_addresses/count", params
+      get "v2/orders/#{order_id}/shipping_addresses/count", params
     end
 
     def self.count_all(params = {})
-      get 'orders/shipping_addresses/count', params
+      get 'v2/orders/shipping_addresses/count', params
     end
   end
 end

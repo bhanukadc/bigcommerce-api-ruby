@@ -4,7 +4,7 @@
 
 module Bigcommerce
   class Category < Resource
-    include Bigcommerce::ResourceActions.new uri: 'categories/%d'
+    include Bigcommerce::ResourceActions.new(uri: 'v2/categories/%d', v3uri: 'v3/catalog/categories/%d')
 
     property :id
     property :parent_id
@@ -23,7 +23,7 @@ module Bigcommerce
     property :url
 
     def self.count(params = {})
-      get 'categories/count', params
+      get 'v2/categories/count', params
     end
   end
 end

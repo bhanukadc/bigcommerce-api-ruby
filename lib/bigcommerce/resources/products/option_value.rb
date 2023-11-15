@@ -4,7 +4,7 @@
 
 module Bigcommerce
   class OptionValue < Resource
-    include Bigcommerce::SubresourceActions.new uri: 'options/%d/values/%d'
+    include Bigcommerce::SubresourceActions.new uri: 'v2/options/%d/values/%d'
 
     property :id
     property :option_id

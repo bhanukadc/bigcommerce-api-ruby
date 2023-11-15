@@ -9,12 +9,12 @@ RSpec.describe Bigcommerce::PaymentMethod do
 
   describe '.all' do
     it 'should hit the correct path without params' do
-      expect(@payment_method).to receive(:get).with('payments/methods', {})
+      expect(@payment_method).to receive(:get).with('v2/payments/methods', {})
       @payment_method.all
     end
 
     it 'should hit the correct path with params' do
-      expect(@payment_method).to receive(:get).with('payments/methods', params)
+      expect(@payment_method).to receive(:get).with('v2/payments/methods', params)
       @payment_method.all params
     end
   end

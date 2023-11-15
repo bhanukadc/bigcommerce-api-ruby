@@ -4,7 +4,7 @@
 
 module Bigcommerce
   class ProductRule < Resource
-    include Bigcommerce::SubresourceActions.new uri: 'products/%d/rules/%d'
+    include Bigcommerce::SubresourceActions.new uri: 'v2/products/%d/rules/%d'
 
     property :id
     property :count
@@ -21,11 +21,11 @@ module Bigcommerce
     property :conditions
 
     def self.count(product_id, params = {})
-      get "products/#{product_id}/rules/count", params
+      get "v2/products/#{product_id}/rules/count", params
     end
 
     def self.count_all(params = {})
-      get 'products/rules/count', params
+      get 'v2/products/rules/count', params
     end
   end
 end

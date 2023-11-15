@@ -4,7 +4,7 @@
 
 module Bigcommerce
   class Banner < Resource
-    include Bigcommerce::ResourceActions.new uri: 'banners/%d'
+    include Bigcommerce::ResourceActions.new uri: 'v2/banners/%d'
 
     property :id
     property :name
